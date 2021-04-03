@@ -12,4 +12,7 @@ in_path()
             result=0    # If we're here, we found the command.
         fi
     done
+
+    IFS=$oldIFS
+    return $result
 }
