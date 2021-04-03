@@ -5,3 +5,6 @@
 GROFF_RUNTIME="${GROFF_BIN_PATH=/usr/bin}:"
 PATH="$GROFF_RUNTIME$PATH"
 export PATH
+exec eqn -Tascii ${1+"$@"}
+
+#eof
