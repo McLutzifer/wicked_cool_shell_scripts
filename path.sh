@@ -21,3 +21,17 @@ in_path()
     IFS=$oldIFS
     return $result
 }
+
+checkForCmdInPath()
+{
+    var=$1
+
+    if [ "$var" !="" ] ; then
+        if [ ! -x $var ] ; then
+            return 1
+        fi
+        elif ! in_path $var "$PATH" ; then
+            return 2
+        fi
+    fi
+}
